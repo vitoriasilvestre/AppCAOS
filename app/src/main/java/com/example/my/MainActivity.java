@@ -128,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
         btGet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("Tuples", "ok");
                 Log.i("Tuples", calc.getDatas());
             }
         });
