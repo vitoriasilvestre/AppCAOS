@@ -32,6 +32,9 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        //Colocar isso para colocar o titulo em cada tela
+        getSupportActionBar().setTitle("Filters\n");
+
         tvResponse = (TextView) findViewById(R.id.tvvResponse);
 
         Caos.getInstance().start(this, this);
@@ -64,16 +67,40 @@ public class MainActivity2 extends AppCompatActivity {
                             tvResponse.setText(read.mediaDezPBatiUser(getApplicationContext().getPackageName()));
                         }
                     });
+                } else if (resposta.equals("Quantidade de pessoas com cancer")) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tvResponse.setText(""+read.getDiagnostico(getApplicationContext().getPackageName(), "[Cancer]"));
+                        }
+                    });
+                } else if (resposta.equals("Quantidade de pessoas com covid")) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tvResponse.setText(""+read.getDiagnostico(getApplicationContext().getPackageName(), "[Covid]"));
+                        }
+                    });
+                } else if (resposta.equals("Quantidade de pessoas que tomaram analgésico")) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tvResponse.setText(""+read.getMedication(getApplicationContext().getPackageName(), "[Analgesic]"));
+                        }
+                    });
                 }
-            }
-        });
+                else if (resposta.equals("Quantidade de pessoas que tem Febre, Dor no corpo e Dor de cabeça")) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tvResponse.setText(""+read.getSymptoms(getApplicationContext().getPackageName(), "[Fever, Body ache, Headache]"));
+                        }
+                    });
+                }
 
-        btPesquisaA = (Button) findViewById(R.id.btPesquisaA);
-        btPesquisaA.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
-                startActivity(intent);
+
             }
         });
     }
+
 }

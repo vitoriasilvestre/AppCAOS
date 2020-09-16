@@ -10,171 +10,184 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
         android:text="Medical Record"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/etName"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="78dp"
-        android:layout_marginBottom="81dp"
-        android:text="Name:"
-        app:layout_constraintBottom_toBottomOf="@+id/etCPF"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etNome"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="7dp"
         android:text="CPF:"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:text="Date of Birth:"
-        app:layout_constraintBaseline_toBaselineOf="@+id/etDate"
+        app:layout_constraintBottom_toBottomOf="@+id/etNome"
+        app:layout_constraintEnd_toStartOf="@+id/cbFebre"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="82dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/etCPF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/etName"
-        app:layout_constraintTop_toBottomOf="@+id/etName" />
-
-    <EditText
-        android:id="@+id/etDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/etCPF"
-        app:layout_constraintTop_toBottomOf="@+id/etCPF" />
 
     <Button
         android:id="@+id/btOffloading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="16dp"
         android:text="ADD"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btGet"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btGet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginStart="9dp"
         android:text="GET"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btOffloading"
-        app:layout_constraintTop_toTopOf="@+id/cbAnalgesico" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/btPesquisar"
+        app:layout_constraintStart_toEndOf="@+id/btCadastroU" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="55dp"
-        android:text="Queixas do paciente"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="298dp"
+        android:text="Patients' complaint "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDate" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/cbFebre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:text="Febre"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/textView5" />
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:text="Fever"
+        app:layout_constraintStart_toStartOf="@+id/cbDCabeca"
+        app:layout_constraintTop_toBottomOf="@+id/cbDCabeca" />
 
     <Button
-        android:id="@+id/btPesquisa"
+        android:id="@+id/btPesquisar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="33dp"
-        android:text="Pesquisa"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btGet"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="Search "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btGet" />
 
     <CheckBox
         android:id="@+id/cbDCorpo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="3dp"
-        android:text="Dor no corpo"
-        app:layout_constraintStart_toEndOf="@+id/cbFebre"
-        app:layout_constraintTop_toTopOf="@+id/cbFebre" />
+        android:layout_marginStart="9dp"
+        android:text="Body ache"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cbDCabeca"
+        app:layout_constraintStart_toEndOf="@+id/cbDCabeca" />
 
     <CheckBox
         android:id="@+id/cbDCabeca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="13dp"
-        android:text="Dor de cabeça"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/cbDCorpo" />
+        android:text="Headache"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginEnd="42dp"
-        android:text="Medicação"
-        app:layout_constraintBaseline_toBaselineOf="@+id/cbAnalgesico"
-        app:layout_constraintEnd_toStartOf="@+id/cbDCabeca"
+        android:layout_marginStart="33dp"
+        android:text="Medication"
+        app:layout_constraintBottom_toBottomOf="@+id/cbAnalgesico"
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/cbAnalgesico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="33dp"
-        android:text="Analgésico "
-        app:layout_constraintEnd_toStartOf="@+id/cbAntibiotico"
-        app:layout_constraintTop_toBottomOf="@+id/cbDCabeca" />
+        android:layout_marginTop="25dp"
+        android:text="Analgesic"
+        app:layout_constraintStart_toStartOf="@+id/cbFebre"
+        app:layout_constraintTop_toBottomOf="@+id/cbFebre" />
 
     <CheckBox
         android:id="@+id/cbAntibiotico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:text="Antibiótico "
+        android:layout_marginStart="27dp"
+        android:text="Antibiotic"
         app:layout_constraintBaseline_toBaselineOf="@+id/cbAnalgesico"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/cbAnalgesico" />
+
+    <Button
+        android:id="@+id/btCadastroU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Register"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btGet"
+        app:layout_constraintStart_toEndOf="@+id/btOffloading" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="1dp"
+        android:text="Diagnosis "
+        app:layout_constraintBottom_toBottomOf="@+id/cbCancer"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbCancer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="47dp"
+        android:text="Cancer"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/cbAnalgesico" />
+
+    <CheckBox
+        android:id="@+id/cbCovid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:text="Covid"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cbCancer"
+        app:layout_constraintStart_toStartOf="@+id/cbAntibiotico" />
+
+    <Button
+        android:id="@+id/btCPF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNome" />
+
+    <TextView
+        android:id="@+id/tvNameCPF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="27dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/btCPF"
+        app:layout_constraintTop_toBottomOf="@+id/btCPF" />
 </androidx.constraintlayout.widget.ConstraintLayout>

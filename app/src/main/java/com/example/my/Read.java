@@ -12,8 +12,12 @@ import br.ufc.great.syssu.eval.Expression;
 import br.ufc.great.syssu.eval.var.NumberConstant;
 import br.ufc.great.syssu.eval.var.NumberSensorVariable;
 import br.ufc.great.syssu.eval.var.StringConstant;
+import br.ufc.great.syssu.eval.var.StringListVariable;
 import br.ufc.great.syssu.eval.var.StringSensorVariable;
+import br.ufc.great.syssu.eval.var.StringVariable;
 
+import static br.ufc.great.syssu.eval.Expression.and;
+import static br.ufc.great.syssu.eval.Expression.array;
 import static br.ufc.great.syssu.eval.Expression.eq;
 import static br.ufc.great.syssu.eval.Expression.gt;
 import static br.ufc.great.syssu.eval.Expression.sensor;
@@ -157,6 +161,100 @@ public class Read implements IRead {
         //Calculando a média
         return ""+result/list.size();
     }
+
+    @Override
+    public Tuple getNameCPF(String packageName, String cpf) {
+        //Offloading de dados
+        Pattern pattern = (Pattern) new Pattern().addField("id_app", packageName).addField("cpf", cpf);
+
+        List<Tuple> list = Caos.getInstance().filter(pattern, null);
+        Log.i("Tuples", list.get(0).toString());
+        return list.get(0);
+    }
+
+    //Filtro que pega a doença
+    @Override
+    public int getDiagnostico(String packagename, final String diagnostico) {
+        //Offloading de dados
+        Pattern pattern = (Pattern) new Pattern().addField("id_app", packagename);
+
+        IFilter filter = new IFilter() {
+            @Override
+            public Expression localFilter() {
+                return null;
+            }
+
+            @Override
+            public Expression remoteFilter() {
+                StringVariable field = new StringVariable("diagnostico");
+                //QUando coloca diagnostico ele fica genérico e trás todas as doenças e o filtro do que esta sendo feito lá
+                //No main
+                 Expression exp1 = eq(field, new StringConstant(diagnostico));
+
+                return exp1;
+            }
+        };
+
+        List<Tuple> list = Caos.getInstance().filter(pattern, filter);
+
+        return list.size();
+    }
+
+    @Override
+    public int getMedication(String packagename, final String medication) {
+        //Offloading de dados
+        Pattern pattern = (Pattern) new Pattern().addField("id_app", packagename);
+
+        IFilter filter = new IFilter() {
+            @Override
+            public Expression localFilter() {
+                return null;
+            }
+
+            @Override
+            public Expression remoteFilter() {
+                StringVariable field = new StringVariable("medication");
+                //QUando coloca diagnostico ele fica genérico e trás todas as doenças e o filtro do que esta sendo feito lá
+                //No main
+                Expression exp1 = eq(field, new StringConstant(medication));
+
+                return exp1;
+            }
+        };
+
+        List<Tuple> list = Caos.getInstance().filter(pattern, filter);
+
+        return list.size();
+    }
+    @Override
+    public int getSymptoms(String packagename, final String symptoms) {
+        //Offloading de dados
+        Pattern pattern = (Pattern) new Pattern().addField("id_app", packagename);
+
+        IFilter filter = new IFilter() {
+            @Override
+            public Expression localFilter() {
+                return null;
+            }
+
+            @Override
+            public Expression remoteFilter() {
+                StringVariable field = new StringVariable("symptoms");
+                //QUando coloca diagnostico ele fica genérico e trás todas as doenças e o filtro do que esta sendo feito lá
+                //No main
+                Expression exp1 = eq(field, new StringConstant(symptoms));
+
+                return exp1;
+            }
+        };
+
+        List<Tuple> list = Caos.getInstance().filter(pattern, filter);
+
+        return list.size();
+    }
+
+
+
 
 
 

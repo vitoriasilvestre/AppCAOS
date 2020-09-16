@@ -10,4 +10,5 @@ public interface ICalc {
     //Média da temṕeratura de todos os usuários
     @Offloadable(Offloadable.Offload.STATIC)
     public String mediaTempAllUsers (String packageName);
+
 }
